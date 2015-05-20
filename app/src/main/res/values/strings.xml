@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">自动登陆</string>
+    <string name="btn_start">保存</string>
+    <string name="btn_login">登陆</string>
+    <string name="bk_color">#4FBDD0</string>
+    <string name="stringUsername">username</string>
+    <string name="stringPassword">password</string>
+    <string name="stringHaveData">havedata</string>
+    <string name="stringFileName">data</string>
+</resources>
