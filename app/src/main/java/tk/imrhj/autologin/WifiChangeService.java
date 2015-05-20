@@ -71,7 +71,8 @@ public class WifiChangeService extends Service {
         public void onCreate() {
             super.onCreate();
             System.out.println("我是create");
-            SharedPreferences preferences = getSharedPreferences(this.getString(R.string.stringFileName), MODE_PRIVATE);
+            SharedPreferences preferences = MyApplication.getContext().getSharedPreferences(this.getString(R.string.stringFileName), MODE_PRIVATE);
+            System.out.println(preferences.getString(this.getString(R.string.stringUsername), ""));
             haveData = preferences.getBoolean(this.getString(R.string.stringHaveData), false);
             if (haveData) {
                 username = preferences.getString(this.getString(R.string.stringUsername), "");
