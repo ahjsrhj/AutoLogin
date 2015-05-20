@@ -1,9 +1,12 @@
 package tk.imrhj.autologin;
 
+import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -12,6 +15,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.view.Gravity;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -27,15 +31,16 @@ public class WifiChangeService extends Service {
 
     private final int CONTENT_SUCCESS = 1;
     private final int CONTENT_FAILD = 0;
-    private boolean haveConnect = false;
+    private boolean wifiConnect = false;
     private boolean haveData = false;
+    private boolean haveConnect = false;
     private String username;
     private String password;
     private String userLength;
     private String userPost;
     private String netPost =   "username=net&password=d0083043c6576dd2&drop=0&type=1&n=110";
-    //                          username=2013014053&password=83aa400af464C76D&drop=0&type=1&n=110
     private String netLength = "58";
+
 
 
     private Handler handler = new Handler() {
@@ -43,11 +48,13 @@ public class WifiChangeService extends Service {
         public void handleMessage(Message message) {
             switch (message.what) {
                 case CONTENT_SUCCESS:
+                    haveConnect = true;
                     System.out.println("登陆成功");
                     showToast("登陆成功");
                     break;
                 case CONTENT_FAILD:
                     System.out.println("登陆失败");
+                    haveConnect = false;
                     showToast("登陆失败\n" + message.getData().getString("string"));
                     System.out.println(message.getData().getString("string"));
                     break;
@@ -86,32 +93,62 @@ public class WifiChangeService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        NetworkInfo info = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
-        if (info != null) {
-            if (info.getState().equals(NetworkInfo.State.DISCONNECTED)) {
-                intent.putExtra("haveConnect", false);
-            } else if (info.getState().equals(NetworkInfo.State.CONNECTED)) {
-                intent.putExtra("haveConnect", true);
+        System.out.println("我是start");
+        WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
+        WifiInfo info = wifiManager.getConnectionInfo();
+        if (intent.getBooleanExtra("bool_login", false)) {
+            haveConnect = false;
+            wifiConnect = true;
+            System.out.println("bool_login");
+        } else {
+            int ipAddress = info == null ? 0 : info.getIpAddress();
+            if (wifiManager.isWifiEnabled() && ipAddress != 0) {
+                wifiConnect = true;
+            } else {
+                haveConnect = false;
+                wifiConnect = false;
+                System.out.println("断开连接");
             }
         }
 
-        if (haveConnect) {
-            WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-            String SSID = wifiInfo.getSSID();
+        if (wifiConnect && !haveConnect) {
+
+            String SSID = info.getSSID();
             System.out.println(SSID);
 
             if (SSID.equals("\"WLZX\"") || SSID.equals("\"rhj-miwifi_5G\"")) {
-                System.out.println("开始登陆" + SSID);
                 doLogin(netPost, netLength);
-            } else if (SSID.equals("\"WXXY\"")) {
-                System.out.println("开始登陆" + SSID);
-                doLogin(userPost, userLength);
+                haveConnect = true;
+            } else if (haveData && SSID.equals("\"WXXY\"")) {
+
+                haveConnect = true;
+                AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                dialog.setTitle("提示")
+                        .setMessage("探子来报!WXXY已连接!\n是否登陆?")
+                        .setPositiveButton("登陆", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                doLogin(userPost, userLength);
+                                haveConnect = true;
+                            }
+                        })
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                haveConnect = false;
+                            }
+                        });
+                AlertDialog ad = dialog.create();
+                ad.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+                ad.setCanceledOnTouchOutside(false);
+                ad.show();
             }
         }
 
-        flags = START_STICKY;
-        return super.onStartCommand(intent, flags, startId);
+
+    flags = START_STICKY;
+    return super.onStartCommand(intent, flags, startId);
+
     }
 
     @Override

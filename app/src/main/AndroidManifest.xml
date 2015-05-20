@@ -31,8 +31,8 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".WifiChangeService">
-
+        <service android:name=".WifiChangeService"
+            android:process="tk.imrhj.autologin.WifiChangeService">
         </service>
 
     </application>
