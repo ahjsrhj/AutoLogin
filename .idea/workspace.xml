@@ -20,6 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bde7c0c-c9da-46e7-9550-23d067f55650" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AutoLogin.iws" />
@@ -63,25 +65,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="106" selection-start-line="61" selection-start-column="106" selection-end-line="61" selection-end-column="106" />
+            <state vertical-scroll-proportion="1.1631879">
+              <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1876#1915#0" expanded="true" />
-                <element signature="e#1977#2016#0" expanded="true" />
-                <element signature="e#2062#2101#0" expanded="true" />
-                <element signature="e#2152#2191#0" expanded="true" />
-                <element signature="e#2495#2534#0" expanded="true" />
-                <element signature="e#2612#2651#0" expanded="true" />
-                <element signature="e#3504#3537#0" expanded="true" />
-                <element signature="e#3608#3641#0" expanded="true" />
-                <element signature="e#3769#3808#0" expanded="true" />
-                <element signature="e#3867#3906#0" expanded="true" />
-                <element signature="e#3991#4030#0" expanded="true" />
-                <element signature="e#4088#4127#0" expanded="true" />
+                <element signature="e#1811#1850#0" expanded="true" />
+                <element signature="e#1918#1957#0" expanded="true" />
+                <element signature="e#2003#2042#0" expanded="true" />
+                <element signature="e#2093#2132#0" expanded="true" />
+                <element signature="e#3210#3243#0" expanded="true" />
+                <element signature="e#3314#3347#0" expanded="true" />
+                <element signature="e#3475#3514#0" expanded="true" />
+                <element signature="e#3579#3618#0" expanded="true" />
+                <element signature="e#3703#3742#0" expanded="true" />
+                <element signature="e#3800#3839#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,26 +109,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WifiChangeService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WifiChangeService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7348928">
-              <caret line="73" column="83" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1215#1790#0" expanded="true" />
                 <element signature="e#1789#1790#0" expanded="true" />
                 <element signature="e#2081#2082#0" expanded="true" />
                 <element signature="e#2116#2117#0" expanded="true" />
-                <element signature="e#2335#2374#0" expanded="true" />
-                <element signature="e#2444#2483#0" expanded="true" />
-                <element signature="e#2537#2576#0" expanded="true" />
-                <element signature="e#2663#2702#0" expanded="true" />
-                <element signature="e#2764#2803#0" expanded="true" />
-                <element signature="e#4631#5532#0" expanded="true" />
-                <element signature="e#5531#5532#0" expanded="true" />
-                <element signature="e#5645#8358#0" expanded="true" />
-                <element signature="e#8357#8358#0" expanded="true" />
+                <element signature="e#2264#2303#0" expanded="true" />
+                <element signature="e#2373#2412#0" expanded="true" />
+                <element signature="e#2499#2538#0" expanded="true" />
+                <element signature="e#2600#2639#0" expanded="true" />
+                <element signature="e#4265#5166#0" expanded="true" />
+                <element signature="e#5165#5166#0" expanded="true" />
+                <element signature="e#5279#7992#0" expanded="true" />
+                <element signature="e#7991#7992#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1476,10 +1475,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MD5.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeReceiver.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MyApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1838,7 +1837,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432122710265</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix bug">
+      <created>1432122734654</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1432122734654</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1846,18 +1851,18 @@
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18669528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3114144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3114144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20386267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1919,18 +1924,16 @@
           <caret line="62" column="54" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1876#1915#0" expanded="true" />
-            <element signature="e#1977#2016#0" expanded="true" />
-            <element signature="e#2062#2101#0" expanded="true" />
-            <element signature="e#2152#2191#0" expanded="true" />
-            <element signature="e#2495#2534#0" expanded="true" />
-            <element signature="e#2612#2651#0" expanded="true" />
-            <element signature="e#3504#3537#0" expanded="true" />
-            <element signature="e#3608#3641#0" expanded="true" />
-            <element signature="e#3769#3808#0" expanded="true" />
-            <element signature="e#3867#3906#0" expanded="true" />
-            <element signature="e#3991#4030#0" expanded="true" />
-            <element signature="e#4088#4127#0" expanded="true" />
+            <element signature="e#1811#1850#0" expanded="true" />
+            <element signature="e#1918#1957#0" expanded="true" />
+            <element signature="e#2003#2042#0" expanded="true" />
+            <element signature="e#2093#2132#0" expanded="true" />
+            <element signature="e#3210#3243#0" expanded="true" />
+            <element signature="e#3314#3347#0" expanded="true" />
+            <element signature="e#3475#3514#0" expanded="true" />
+            <element signature="e#3579#3618#0" expanded="true" />
+            <element signature="e#3703#3742#0" expanded="true" />
+            <element signature="e#3800#3839#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1945,15 +1948,14 @@
             <element signature="e#1789#1790#0" expanded="true" />
             <element signature="e#2081#2082#0" expanded="true" />
             <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2335#2374#0" expanded="true" />
-            <element signature="e#2444#2483#0" expanded="true" />
-            <element signature="e#2537#2576#0" expanded="true" />
-            <element signature="e#2663#2702#0" expanded="true" />
-            <element signature="e#2764#2803#0" expanded="true" />
-            <element signature="e#4631#5532#0" expanded="true" />
-            <element signature="e#5531#5532#0" expanded="true" />
-            <element signature="e#5645#8358#0" expanded="true" />
-            <element signature="e#8357#8358#0" expanded="true" />
+            <element signature="e#2264#2303#0" expanded="true" />
+            <element signature="e#2373#2412#0" expanded="true" />
+            <element signature="e#2499#2538#0" expanded="true" />
+            <element signature="e#2600#2639#0" expanded="true" />
+            <element signature="e#4265#5166#0" expanded="true" />
+            <element signature="e#5165#5166#0" expanded="true" />
+            <element signature="e#5279#7992#0" expanded="true" />
+            <element signature="e#7991#7992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2077,42 +2079,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/ProtectedService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="106" selection-start-line="61" selection-start-column="106" selection-end-line="61" selection-end-column="106" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1876#1915#0" expanded="true" />
-            <element signature="e#1977#2016#0" expanded="true" />
-            <element signature="e#2062#2101#0" expanded="true" />
-            <element signature="e#2152#2191#0" expanded="true" />
-            <element signature="e#2495#2534#0" expanded="true" />
-            <element signature="e#2612#2651#0" expanded="true" />
-            <element signature="e#3504#3537#0" expanded="true" />
-            <element signature="e#3608#3641#0" expanded="true" />
-            <element signature="e#3769#3808#0" expanded="true" />
-            <element signature="e#3867#3906#0" expanded="true" />
-            <element signature="e#3991#4030#0" expanded="true" />
-            <element signature="e#4088#4127#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2127,6 +2099,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MyApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2137,33 +2125,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7348928">
-          <caret line="73" column="83" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1215#1790#0" expanded="true" />
             <element signature="e#1789#1790#0" expanded="true" />
             <element signature="e#2081#2082#0" expanded="true" />
             <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2335#2374#0" expanded="true" />
-            <element signature="e#2444#2483#0" expanded="true" />
-            <element signature="e#2537#2576#0" expanded="true" />
-            <element signature="e#2663#2702#0" expanded="true" />
-            <element signature="e#2764#2803#0" expanded="true" />
-            <element signature="e#4631#5532#0" expanded="true" />
-            <element signature="e#5531#5532#0" expanded="true" />
-            <element signature="e#5645#8358#0" expanded="true" />
-            <element signature="e#8357#8358#0" expanded="true" />
+            <element signature="e#2264#2303#0" expanded="true" />
+            <element signature="e#2373#2412#0" expanded="true" />
+            <element signature="e#2499#2538#0" expanded="true" />
+            <element signature="e#2600#2639#0" expanded="true" />
+            <element signature="e#4265#5166#0" expanded="true" />
+            <element signature="e#5165#5166#0" expanded="true" />
+            <element signature="e#5279#7992#0" expanded="true" />
+            <element signature="e#7991#7992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1631879">
+          <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1811#1850#0" expanded="true" />
+            <element signature="e#1918#1957#0" expanded="true" />
+            <element signature="e#2003#2042#0" expanded="true" />
+            <element signature="e#2093#2132#0" expanded="true" />
+            <element signature="e#3210#3243#0" expanded="true" />
+            <element signature="e#3314#3347#0" expanded="true" />
+            <element signature="e#3475#3514#0" expanded="true" />
+            <element signature="e#3579#3618#0" expanded="true" />
+            <element signature="e#3703#3742#0" expanded="true" />
+            <element signature="e#3800#3839#0" expanded="true" />
           </folding>
         </state>
       </provider>

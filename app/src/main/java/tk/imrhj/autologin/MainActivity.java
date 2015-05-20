@@ -46,11 +46,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.btn_start:        //保存按钮
                 String user_name = userName.getText().toString();
                 String pass_word = password.getText().toString();
-                System.out.println(user_name + "\n" + pass_word);
+
                 if (user_name == null || user_name == "" || pass_word == null || pass_word == "") {
                     Toast.makeText(MainActivity.this, "用户名或密码格式不正确!", Toast.LENGTH_SHORT).show();
                 } else {
-                    SharedPreferences.Editor editor = getSharedPreferences(this.getString(R.string.stringFileName), MODE_PRIVATE).edit();
+                    SharedPreferences.Editor editor = getSharedPreferences(this.getString(R.string.stringFileName), MODE_MULTI_PROCESS).edit();
                     editor.putBoolean(this.getString(R.string.stringHaveData), true);
                     editor.putString(this.getString(R.string.stringUsername), user_name);
                     editor.putString(this.getString(R.string.stringPassword), pass_word);
@@ -58,8 +58,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     Toast.makeText(MainActivity.this, "保存账号信息成功!", Toast.LENGTH_SHORT).show();
                     stopService(service);
                     startService(service);
-                    SharedPreferences preferences = getSharedPreferences(this.getString(R.string.stringFileName), MODE_PRIVATE);
-                    System.out.println(preferences.getString(this.getString(R.string.stringUsername),""));
+
                 }
                 break;
             case R.id.btn_login:            //登陆按钮
@@ -90,7 +89,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     //打开应用时读取数据
     private void LoadData() {
-        SharedPreferences preferences = getSharedPreferences(this.getString(R.string.stringFileName), MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences(this.getString(R.string.stringFileName), MODE_MULTI_PROCESS);
         haveData = preferences.getBoolean(this.getString(R.string.stringHaveData), false);
         if (haveData) {
             userName.setText(preferences.getString(this.getString(R.string.stringUsername),""));

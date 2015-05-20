@@ -70,9 +70,8 @@ public class WifiChangeService extends Service {
         @Override
         public void onCreate() {
             super.onCreate();
-            System.out.println("我是create");
-            SharedPreferences preferences = MyApplication.getContext().getSharedPreferences(this.getString(R.string.stringFileName), MODE_PRIVATE);
-            System.out.println(preferences.getString(this.getString(R.string.stringUsername), ""));
+            SharedPreferences preferences = getSharedPreferences(this.getString(R.string.stringFileName), MODE_MULTI_PROCESS);
+
             haveData = preferences.getBoolean(this.getString(R.string.stringHaveData), false);
             if (haveData) {
                 username = preferences.getString(this.getString(R.string.stringUsername), "");
@@ -81,7 +80,6 @@ public class WifiChangeService extends Service {
                 String string = "username=" + username + "&password=" + password + "&drop=0&type=1&n=110";
                 userPost = string.toLowerCase();
                 userLength = "" + userPost.length();
-                System.out.println(userPost + ". Length = " + userLength);
             }
         }
 
@@ -96,7 +94,6 @@ public class WifiChangeService extends Service {
                 intent.putExtra("haveConnect", true);
             }
         }
-        System.out.println("我也不知道谁启动的我");
 
         if (haveConnect) {
             WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
@@ -119,9 +116,6 @@ public class WifiChangeService extends Service {
 
     @Override
     public void onDestroy() {
-        System.out.println("我被销毁了！！");
-        username = "";
-        password = "";
         super.onDestroy();
 
 
