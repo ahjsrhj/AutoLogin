@@ -62,7 +62,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.btn_login:            //登陆按钮
-
+                service.putExtra("bool_login", true);
                 startService(service);
                 break;
         }
