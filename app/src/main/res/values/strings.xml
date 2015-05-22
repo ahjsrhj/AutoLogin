@@ -7,4 +7,8 @@
     <string name="stringPassword">password</string>
     <string name="stringHaveData">havedata</string>
     <string name="stringFileName">data</string>
+    <string name="title_activity_main_activity2">MainActivity2Activity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>
