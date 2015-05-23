@@ -1,8 +1,8 @@
 package tk.imrhj.autologin;
 
-import android.app.ActionBar;
-import android.app.Activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -16,6 +16,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.json.JSONArray;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
@@ -122,19 +124,54 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         int id = item.getItemId();
         switch (id) {
             case R.id.action_settings:
+                Toast.makeText(this,"暂未添加",Toast.LENGTH_SHORT).show();
+
                 break;
             case R.id.action_help:
                 break;
             case R.id.action_about:
                 break;
             case R.id.action_updata:
+
                 break;
             case R.id.action_exit:
+                Intent intent = new Intent(MainActivity.this, WifiChangeService.class);
+                stopService(intent);
+                System.exit(0);
                 break;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    private void checkUpdata() {
+        String stringVersion = HttpContent.getVersionFromJson();
+        Double doubleVersion = Double.parseDouble(stringVersion);
+        Double version = Double.parseDouble(this.getString(R.string.version));
+
+        if (doubleVersion > version) {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+            String message = "发现新的版本" + stringVersion + "\n是否升级?";
+            dialog.setTitle("提示")
+                    .setMessage(message)
+                    .setCancelable(false)
+                    .setPositiveButton("是", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                    .setNegativeButton("否", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(MainActivity.this, "你取消了升级", Toast.LENGTH_SHORT).show();
+                        }
+                    }).show();
+        }
+
+    }
+
+
 
 
 }

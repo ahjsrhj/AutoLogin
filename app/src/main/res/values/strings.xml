@@ -1,4 +1,5 @@
 <resources>
+    <string name="version">1.3</string>
     <string name="app_name">自动登陆</string>
     <string name="btn_start">保存</string>
     <string name="btn_login">登陆</string>

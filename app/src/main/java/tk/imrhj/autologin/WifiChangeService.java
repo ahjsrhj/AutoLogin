@@ -155,7 +155,6 @@ public class WifiChangeService extends Service {
     public void onDestroy() {
         super.onDestroy();
 
-
     }
 
     public void doLogout() {
