@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -132,7 +133,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.action_about:
                 break;
             case R.id.action_updata:
-
+                checkUpdata();
                 break;
             case R.id.action_exit:
                 Intent intent = new Intent(MainActivity.this, WifiChangeService.class);
@@ -158,7 +159,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     .setPositiveButton("是", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse("http://pan.baidu.com/s/1dD4ejRF"));
+                            startActivity(intent);
                         }
                     })
                     .setNegativeButton("否", new DialogInterface.OnClickListener() {
@@ -167,6 +170,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                             Toast.makeText(MainActivity.this, "你取消了升级", Toast.LENGTH_SHORT).show();
                         }
                     }).show();
+        } else {
+            Toast.makeText(this, "暂无更新", Toast.LENGTH_SHORT).show();
         }
 
     }

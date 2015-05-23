@@ -17,14 +17,11 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bde7c0c-c9da-46e7-9550-23d067f55650" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/HttpContent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AutoLogin.iws" />
@@ -69,13 +66,15 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48766604">
-              <caret line="160" column="28" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.743833">
+              <caret line="173" column="68" selection-start-line="173" selection-start-column="68" selection-end-line="173" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5195#5227#0" expanded="true" />
-                <element signature="e#5860#6162#0" expanded="true" />
-                <element signature="e#6161#6162#0" expanded="true" />
+                <element signature="e#5249#5281#0" expanded="true" />
+                <element signature="e#5637#6056#0" expanded="true" />
+                <element signature="e#6055#6056#0" expanded="true" />
+                <element signature="e#6102#6404#0" expanded="true" />
+                <element signature="e#6403#6404#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1917,7 +1916,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432304477185</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add autodata&#10;">
+      <created>1432387378347</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1432387378347</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2010,7 +2015,8 @@
     <MESSAGE value="test service" />
     <MESSAGE value="add menu&#10;" />
     <MESSAGE value="add menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="add menu" />
+    <MESSAGE value="add autodata&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="add autodata&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2041,9 +2047,11 @@
           <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5195#5227#0" expanded="true" />
-            <element signature="e#5860#6162#0" expanded="true" />
-            <element signature="e#6161#6162#0" expanded="true" />
+            <element signature="e#5249#5281#0" expanded="true" />
+            <element signature="e#5637#6056#0" expanded="true" />
+            <element signature="e#6055#6056#0" expanded="true" />
+            <element signature="e#6102#6404#0" expanded="true" />
+            <element signature="e#6403#6404#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2120,9 +2128,11 @@
           <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5195#5227#0" expanded="true" />
-            <element signature="e#5860#6162#0" expanded="true" />
-            <element signature="e#6161#6162#0" expanded="true" />
+            <element signature="e#5249#5281#0" expanded="true" />
+            <element signature="e#5637#6056#0" expanded="true" />
+            <element signature="e#6055#6056#0" expanded="true" />
+            <element signature="e#6102#6404#0" expanded="true" />
+            <element signature="e#6403#6404#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2199,9 +2209,11 @@
           <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5195#5227#0" expanded="true" />
-            <element signature="e#5860#6162#0" expanded="true" />
-            <element signature="e#6161#6162#0" expanded="true" />
+            <element signature="e#5249#5281#0" expanded="true" />
+            <element signature="e#5637#6056#0" expanded="true" />
+            <element signature="e#6055#6056#0" expanded="true" />
+            <element signature="e#6102#6404#0" expanded="true" />
+            <element signature="e#6403#6404#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2270,9 +2282,11 @@
           <caret line="62" column="54" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5195#5227#0" expanded="true" />
-            <element signature="e#5860#6162#0" expanded="true" />
-            <element signature="e#6161#6162#0" expanded="true" />
+            <element signature="e#5249#5281#0" expanded="true" />
+            <element signature="e#5637#6056#0" expanded="true" />
+            <element signature="e#6055#6056#0" expanded="true" />
+            <element signature="e#6102#6404#0" expanded="true" />
+            <element signature="e#6403#6404#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2534,13 +2548,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48766604">
-          <caret line="160" column="28" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.743833">
+          <caret line="173" column="68" selection-start-line="173" selection-start-column="68" selection-end-line="173" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5195#5227#0" expanded="true" />
-            <element signature="e#5860#6162#0" expanded="true" />
-            <element signature="e#6161#6162#0" expanded="true" />
+            <element signature="e#5249#5281#0" expanded="true" />
+            <element signature="e#5637#6056#0" expanded="true" />
+            <element signature="e#6055#6056#0" expanded="true" />
+            <element signature="e#6102#6404#0" expanded="true" />
+            <element signature="e#6403#6404#0" expanded="true" />
           </folding>
         </state>
       </provider>
