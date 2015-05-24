@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -17,7 +15,6 @@ import android.os.Message;
 import android.view.Gravity;
 import android.view.WindowManager;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -64,8 +61,8 @@ public class WifiChangeService extends Service {
 
     public void showToast(String string) {
         Toast toast;
-        toast = Toast.makeText(MyApplication.getContext(), string, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast = Toast.makeText(MyApplication.getContext(), string, Toast.LENGTH_SHORT);
+    //    toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
     }
 
