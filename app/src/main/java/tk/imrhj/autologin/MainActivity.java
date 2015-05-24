@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,7 +45,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 
 
-
     }
 
     @Override
@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 String user_name = userName.getText().toString();
                 String pass_word = password.getText().toString();
 
-                if (user_name == null || user_name == "" || pass_word == null || pass_word == "") {
+                if (user_name.equals("") || user_name.length() < 1 || pass_word.equals("") || pass_word.length() < 1) {
                     Toast.makeText(MainActivity.this, "用户名或密码格式不正确!", Toast.LENGTH_SHORT).show();
                 } else {
                     SharedPreferences.Editor editor = getSharedPreferences(this.getString(R.string.stringFileName), MODE_MULTI_PROCESS).edit();
@@ -67,11 +67,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     stopService(service);
                     startService(service);
 
+
                 }
                 break;
             case R.id.btn_login:            //登陆按钮
                 service.putExtra("bool_login", true);
                 startService(service);
+                Log.d("MainActivity", "我是登陆");
                 break;
         }
     }

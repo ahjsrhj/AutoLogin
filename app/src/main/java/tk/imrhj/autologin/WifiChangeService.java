@@ -31,6 +31,7 @@ public class WifiChangeService extends Service {
     private boolean wifiConnect = false;
     private boolean haveData = false;
     private boolean haveConnect = false;
+    private boolean showDialog = true;
     private String username;
     private String password;
     private String userLength;
@@ -96,7 +97,6 @@ public class WifiChangeService extends Service {
         if (intent.getBooleanExtra("bool_login", false)) {
             haveConnect = false;
             wifiConnect = true;
-            System.out.println("bool_login");
         } else {
             int ipAddress = info == null ? 0 : info.getIpAddress();
             if (wifiManager.isWifiEnabled() && ipAddress != 0) {
@@ -113,10 +113,10 @@ public class WifiChangeService extends Service {
             String SSID = info.getSSID();
             System.out.println(SSID);
 
-            if (SSID.equals("\"WLZX\"") || SSID.equals("\"rhj-miwifi_5G\"")) {
+            if (SSID.equals("\"WLZX\"") || SSID.equals("\"rhj-miwifi_5G\"") || SSID.equals("WLZX") || SSID.equals("rhj-miwifi_5G")) {
                 doLogin(netPost, netLength);
                 haveConnect = true;
-            } else if (haveData && SSID.equals("\"WXXY\"")) {
+            } else if (showDialog && ((haveData && SSID.equals("\"WXXY\"")) || (haveData && SSID.equals("WXXY")))) {
 
                 haveConnect = true;
                 AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -127,18 +127,21 @@ public class WifiChangeService extends Service {
                             public void onClick(DialogInterface dialog, int which) {
                                 doLogin(userPost, userLength);
                                 haveConnect = true;
+                                showDialog = true;
                             }
                         })
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 haveConnect = false;
+                                showDialog = true;
                             }
                         });
                 AlertDialog ad = dialog.create();
                 ad.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
                 ad.setCanceledOnTouchOutside(false);
                 ad.show();
+                showDialog = false;
             }
         }
 

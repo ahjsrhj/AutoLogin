@@ -1,6 +1,5 @@
 package tk.imrhj.autologin;
 
-import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;

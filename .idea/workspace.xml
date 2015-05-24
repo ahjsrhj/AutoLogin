@@ -4,7 +4,7 @@
     <shared>
       <config>
         <pickBest>false</pickBest>
-        <target>android-20</target>
+        <target>android-22</target>
       </config>
     </shared>
     <layouts>
@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bde7c0c-c9da-46e7-9550-23d067f55650" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/LogUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/HttpContent.java" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/HttpContent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeReceiver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" afterPath="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AutoLogin.iws" />
@@ -49,17 +53,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="68" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WifiChangeReceiver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeReceiver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -68,17 +62,23 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="27" />
-              <caret line="58" column="25" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="25" />
-              <caret line="58" column="75" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="75" />
-              <caret line="65" column="25" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="25" />
-              <caret line="65" column="72" selection-start-line="65" selection-start-column="67" selection-end-line="65" selection-end-column="72" />
-              <caret line="123" column="21" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="21" />
-              <caret line="123" column="48" selection-start-line="123" selection-start-column="43" selection-end-line="123" selection-end-column="48" />
+            <state vertical-scroll-proportion="46.074074">
+              <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3446#3479#0" expanded="true" />
+                <element signature="e#3550#3583#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/LogUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,19 +87,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/HttpContent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="85" selection-start-line="46" selection-start-column="85" selection-end-line="46" selection-end-column="85" />
+              <caret line="116" column="78" selection-start-line="116" selection-start-column="78" selection-end-line="116" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#740#2686#0" expanded="true" />
-                <element signature="e#1220#1830#0" expanded="true" />
-                <element signature="e#1620#1677#0" expanded="true" />
-                <element signature="e#1829#1830#0" expanded="true" />
-                <element signature="e#1884#2235#0" expanded="true" />
-                <element signature="e#2234#2235#0" expanded="true" />
-                <element signature="e#2685#2686#0" expanded="true" />
-                <element signature="e#2834#4631#0" expanded="true" />
-                <element signature="e#4197#4251#0" expanded="true" />
-                <element signature="e#4630#4631#0" expanded="true" />
+                <element signature="e#1895#1952#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,35 +99,21 @@
       <file leaf-file-name="WifiChangeService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2262931">
-              <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1233#1889#0" expanded="true" />
-                <element signature="e#1888#1889#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="1.2915766">
+              <caret line="122" column="37" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer">
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.275862">
-              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.2">
-              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -146,7 +123,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -1202,7 +1189,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4296053880000" />
+        <entry key="$PROJECT_DIR$" value="4296507622000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1451,22 +1438,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/SystemBarTintManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MD5.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MyApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/ProtectedService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeReceiver.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_activity2.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main_activity2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MyHandler.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/HttpContent.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/SystemBarTintManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeReceiver.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/LogUtil.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/HttpContent.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       </list>
     </option>
   </component>
@@ -1568,42 +1556,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutoLogin" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutoLogin" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1660,7 +1612,7 @@
     <property name="recentsLimit" value="5" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0bdc8a51" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="211.70.170.149:5555" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_4_API_22" />
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/Key.jks" />
@@ -1830,7 +1782,7 @@
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -1952,7 +1904,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432387649042</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add autodata success&#10;">
+      <created>1432465995024</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1432465995024</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1966,7 +1924,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1978,9 +1936,9 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18669528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38957816" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39081886" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16237482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -2047,7 +2005,8 @@
     <MESSAGE value="add menu" />
     <MESSAGE value="add autodata&#10;" />
     <MESSAGE value="add autodata1.1&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="add autodata1.1&#10;" />
+    <MESSAGE value="add autodata success&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="add autodata success&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2056,37 +2015,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1233#1889#0" expanded="true" />
-            <element signature="e#1888#1889#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2124,6 +2052,8 @@
           <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3446#3479#0" expanded="true" />
+            <element signature="e#3550#3583#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2132,11 +2062,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1233#1889#0" expanded="true" />
-            <element signature="e#1888#1889#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2196,6 +2122,8 @@
           <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3446#3479#0" expanded="true" />
+            <element signature="e#3550#3583#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2204,11 +2132,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1233#1889#0" expanded="true" />
-            <element signature="e#1888#1889#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2260,6 +2184,8 @@
           <caret line="62" column="54" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3446#3479#0" expanded="true" />
+            <element signature="e#3550#3583#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2268,11 +2194,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1233#1889#0" expanded="true" />
-            <element signature="e#1888#1889#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2319,13 +2241,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/SystemBarTintManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MD5.java">
@@ -2384,21 +2299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-22/com/android/internal/os/ZygoteInit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33206832">
@@ -2413,45 +2313,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.2">
-          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.275862">
-          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17352185">
           <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="68" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -2464,51 +2329,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19396552">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/SystemBarTintManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="27" />
-          <caret line="58" column="25" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="25" />
-          <caret line="58" column="75" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="75" />
-          <caret line="65" column="25" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="25" />
-          <caret line="65" column="72" selection-start-line="65" selection-start-column="67" selection-end-line="65" selection-end-column="72" />
-          <caret line="123" column="21" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="21" />
-          <caret line="123" column="48" selection-start-line="123" selection-start-column="43" selection-end-line="123" selection-end-column="48" />
+          <caret line="175" column="55" selection-start-line="175" selection-start-column="54" selection-end-line="175" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#19987#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7627#7659#0" expanded="false" />
+            <element signature="e#8982#9014#0" expanded="false" />
+            <element signature="e#9723#9724#0" expanded="false" />
+            <element signature="e#9753#9754#0" expanded="false" />
+            <element signature="e#9925#9926#0" expanded="false" />
+            <element signature="e#9969#9970#0" expanded="false" />
+            <element signature="e#10142#10143#0" expanded="false" />
+            <element signature="e#10183#10184#0" expanded="false" />
+            <element signature="e#17200#17201#0" expanded="false" />
+            <element signature="e#17271#17272#0" expanded="false" />
+            <element signature="e#17462#17463#0" expanded="false" />
+            <element signature="e#17509#17510#0" expanded="false" />
+            <element signature="e#17693#17694#0" expanded="false" />
+            <element signature="e#17740#17741#0" expanded="false" />
+            <element signature="e#17959#17960#0" expanded="false" />
+            <element signature="e#18007#18008#0" expanded="false" />
+            <element signature="e#18298#18299#0" expanded="false" />
+            <element signature="e#18349#18350#0" expanded="false" />
+            <element signature="e#18680#18681#0" expanded="false" />
+            <element signature="e#18730#18731#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="46.074074">
+          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3446#3479#0" expanded="true" />
+            <element signature="e#3550#3583#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/LogUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-22/android/os/Parcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39740822">
+          <caret line="1598" column="5" selection-start-line="1596" selection-start-column="37" selection-end-line="1598" selection-end-column="5" />
+          <folding>
+            <element signature="e#56081#56082#0" expanded="false" />
+            <element signature="e#56132#56133#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-22/android/content/pm/PackageInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325688">
+          <caret line="343" column="39" selection-start-line="343" selection-start-column="29" selection-end-line="343" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/HttpContent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="85" selection-start-line="46" selection-start-column="85" selection-end-line="46" selection-end-column="85" />
+          <caret line="116" column="78" selection-start-line="116" selection-start-column="78" selection-end-line="116" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#740#2686#0" expanded="true" />
-            <element signature="e#1220#1830#0" expanded="true" />
-            <element signature="e#1620#1677#0" expanded="true" />
-            <element signature="e#1829#1830#0" expanded="true" />
-            <element signature="e#1884#2235#0" expanded="true" />
-            <element signature="e#2234#2235#0" expanded="true" />
-            <element signature="e#2685#2686#0" expanded="true" />
-            <element signature="e#2834#4631#0" expanded="true" />
-            <element signature="e#4197#4251#0" expanded="true" />
-            <element signature="e#4630#4631#0" expanded="true" />
+            <element signature="e#1895#1952#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tk/imrhj/autologin/WifiChangeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2262931">
-          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1233#1889#0" expanded="true" />
-            <element signature="e#1888#1889#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="1.2915766">
+          <caret line="122" column="37" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
