@@ -126,10 +126,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 Toast.makeText(this,"暂未添加",Toast.LENGTH_SHORT).show();
 
                 break;
-            case R.id.action_help:
-                break;
-            case R.id.action_about:
-                break;
             case R.id.action_updata:
                 HttpContent.getResponse();
                 break;
