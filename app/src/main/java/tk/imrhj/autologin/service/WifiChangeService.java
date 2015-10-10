@@ -1,6 +1,7 @@
-package tk.imrhj.autologin;
+package tk.imrhj.autologin.service;
 
 import android.app.AlertDialog;
+import android.app.KeyguardManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,7 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 import java.io.BufferedReader;
@@ -21,8 +22,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import tk.imrhj.autologin.util.LogUtil;
+import tk.imrhj.autologin.util.MD5;
+import tk.imrhj.autologin.util.MyApplication;
+import tk.imrhj.autologin.R;
+
 /**
  * Created by rhj on 15/5/17.
+ * Created for :
  */
 public class WifiChangeService extends Service {
 
@@ -36,8 +43,11 @@ public class WifiChangeService extends Service {
     private String password;
     private String userLength;
     private String userPost;
-    private String netPost =   "username=net&password=d0083043c6576dd2&drop=0&type=1&n=110";
-    private String netLength = "58";
+    //    private String netPost =   "username=net&password=d0083043c6576dd2&drop=0&type=1&n=110";
+    private String netPost =
+            "action=login&username=net&password=net" +
+                    "&ac_id=4&user_ip=&nas_ip=&user_mac=&save_me=0&ajax=1";
+    private String netLength = "90";
 
 
 
@@ -80,9 +90,8 @@ public class WifiChangeService extends Service {
             haveData = preferences.getBoolean(this.getString(R.string.stringHaveData), false);
             if (haveData) {
                 username = preferences.getString(this.getString(R.string.stringUsername), "");
-                String tmpPass = preferences.getString(this.getString(R.string.stringPassword), "");
-                password = MD5.getMD5Str(tmpPass);
-                String string = "username=" + username + "&password=" + password + "&drop=0&type=1&n=110";
+                password = preferences.getString(this.getString(R.string.stringPassword), "");
+                String string = "action=login&username=" + username + "&password=" + password + "&ac_id=4&user_ip=&nas_ip=&user_mac=&save_me=0&ajax=1";
                 userPost = string.toLowerCase();
                 userLength = "" + userPost.length();
             }
@@ -92,6 +101,15 @@ public class WifiChangeService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         System.out.println("我是start");
+        KeyguardManager keyguardManager = (KeyguardManager) this.getSystemService(Context.KEYGUARD_SERVICE);
+        if (!keyguardManager.inKeyguardRestrictedInputMode()) {
+            LogUtil.d("WifiChangeService", "屏幕状态开启");
+            System.out.println("屏幕开启");
+        } else {
+            LogUtil.d("WifiChangeServicde", "屏幕关闭或未解锁");
+            System.out.println("屏幕关闭状态或未解锁");
+        }
+
         WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
         WifiInfo info = wifiManager.getConnectionInfo();
         if (intent.getBooleanExtra("bool_login", false)) {
@@ -113,35 +131,43 @@ public class WifiChangeService extends Service {
             String SSID = info.getSSID();
             System.out.println(SSID);
 
-            if (SSID.equals("\"WLZX\"") || SSID.equals("\"rhj-miwifi_5G\"") || SSID.equals("WLZX") || SSID.equals("rhj-miwifi_5G")) {
+            if (SSID.equals("\"WLZX\"") || SSID.equals("\"rhj-miwifi_5G\"")
+                    || SSID.equals("WLZX") || SSID.equals("rhj-miwifi_5G")
+                    || SSID.equals("\"WXXY\"") || SSID.equals("WXXY")) {
                 doLogin(netPost, netLength);
                 haveConnect = true;
             } else if (showDialog && ((haveData && SSID.equals("\"WXXY\"")) || (haveData && SSID.equals("WXXY")))) {
 
-                haveConnect = true;
-                AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-                dialog.setTitle("提示")
-                        .setMessage("探子来报!WXXY已连接!\n是否登陆?")
-                        .setPositiveButton("登陆", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                doLogin(userPost, userLength);
-                                haveConnect = true;
-                                showDialog = true;
-                            }
-                        })
-                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                haveConnect = false;
-                                showDialog = true;
-                            }
-                        });
-                AlertDialog ad = dialog.create();
-                ad.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-                ad.setCanceledOnTouchOutside(false);
-                ad.show();
-                showDialog = false;
+
+                if (!keyguardManager.inKeyguardRestrictedInputMode()) {
+                    LogUtil.d("WifiChangeService", "屏幕状态开启");
+                    haveConnect = true;
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                    dialog.setTitle("提示")
+                            .setMessage("探子来报!WXXY已连接!\n是否登陆?")
+                            .setPositiveButton("登陆", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    doLogin(userPost, userLength);
+                                    haveConnect = true;
+                                    showDialog = true;
+                                }
+                            })
+                            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    haveConnect = false;
+                                    showDialog = true;
+                                }
+                            });
+                    AlertDialog ad = dialog.create();
+                    ad.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+                    ad.setCanceledOnTouchOutside(false);
+                    ad.show();
+                    showDialog = false;
+                } else {
+                    LogUtil.d("WifiChangeService", "屏幕状态关闭或者未解锁");
+                }
             }
         }
 
@@ -193,7 +219,7 @@ public class WifiChangeService extends Service {
             public void run() {
                 HttpURLConnection connection = null;
                 try {
-                    URL url = new URL("http://211.70.160.3/cgi-bin/do_login");
+                    URL url = new URL("http://211.70.160.3/include/auth_action.php");
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("POST");
                     connection.setConnectTimeout(8000);
@@ -204,6 +230,8 @@ public class WifiChangeService extends Service {
 
                     //设置连接属性
                     connection.setRequestProperty("Host", "211.70.160.3");
+                    connection.setRequestProperty("Origin", "http://211.70.160.3");
+                    connection.setRequestProperty("Referer", "http://211.70.160.3/srun_portal_pc.php?url=&ac_id=4");
                     connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                     connection.setRequestProperty("Content-Length", content_length);
                     connection.setRequestProperty("Charset", "UTF-8");
@@ -213,23 +241,27 @@ public class WifiChangeService extends Service {
                     out.close();
 
                     int reponseCode = connection.getResponseCode();
+                    Log.e(this.toString(), "run " + reponseCode);
                     if (HttpURLConnection.HTTP_OK == reponseCode) {
                         StringBuffer buffer = new StringBuffer();
                         String line;
-                        BufferedReader responseReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                        BufferedReader responseReader = new BufferedReader(
+                                new InputStreamReader(connection.getInputStream())
+                        );
                         while ((line = responseReader.readLine()) != null) {
                             buffer.append(line);
                         }
                         responseReader.close();
-                        System.out.println(buffer.toString());
+                        System.out.println("服务器返回消息" + buffer.toString());
                         Message message = new Message();
                         Bundle bundle = new Bundle();
                         bundle.putString("string", buffer.toString());
                         message.setData(bundle);
-                        if (buffer.toString().matches("\\d+")) {
+                        if (buffer.toString().matches("login_ok,[\\w\\d,%]+")) {
                             System.out.println("TRUE");
                             message.what = CONTENT_SUCCESS;
                         } else {
+                            Log.e(this.toString(), "run " + buffer.toString());
                             System.out.println("FALSE");
                             message.what = CONTENT_FAILD;
                         }

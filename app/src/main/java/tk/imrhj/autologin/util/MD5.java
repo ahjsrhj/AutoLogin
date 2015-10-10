@@ -1,4 +1,4 @@
-package tk.imrhj.autologin;
+package tk.imrhj.autologin.util;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

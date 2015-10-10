@@ -1,4 +1,4 @@
-package tk.imrhj.autologin;
+package tk.imrhj.autologin.util;
 
 
 
@@ -19,6 +19,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import tk.imrhj.autologin.R;
+import tk.imrhj.autologin.util.LogUtil;
+import tk.imrhj.autologin.util.MyApplication;
 
 
 /**
@@ -50,7 +54,7 @@ public  class HttpContent {
                                     showDialog = true;
                                     Intent intent = new Intent(Intent.ACTION_VIEW);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    intent.setData(Uri.parse(MyApplication.getContext().getString(R.string.update_url)));
+                                    intent.setData(Uri.parse("http://pan.baidu.com/s/1dD4ejRF?third=0&num=20&dir=%2F%E8%BD%AF%E4%BB%B6%2F%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81%2F%E8%87%AA%E5%8A%A8%E7%99%BB%E9%99%86&page=1"));
                                     MyApplication.getContext().startActivity(intent);
                                 }
                             })
@@ -78,7 +82,7 @@ public  class HttpContent {
 
 
     public static void getResponse() {
-        final String string = "http://2.imrhj.sinaapp.com/app/version.xml";
+        final String string = "http://imrhj.sinaapp.com/app/version.xml";
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -108,7 +112,7 @@ public  class HttpContent {
                     //获取版本号
                     PackageManager manager = MyApplication.getContext().getPackageManager();
                     PackageInfo info = manager.getPackageInfo(MyApplication.getContext().getPackageName(), 0);
-                    LogUtil.d("packinfo",info.versionName);
+                    LogUtil.d("packinfo", info.versionName);
 
 
                     //检测是否需要升级

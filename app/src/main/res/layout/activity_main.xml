@@ -1,13 +1,27 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-
     android:fitsSystemWindows="true"
     android:clipToPadding="true"
-
-
     android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_statusbar"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        tools:targetApi="lollipop">
+        <TextView
+            android:text="自动登录"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </Toolbar>
 
     <RelativeLayout
         android:layout_width="match_parent"

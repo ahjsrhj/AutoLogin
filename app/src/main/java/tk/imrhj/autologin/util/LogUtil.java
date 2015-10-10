@@ -1,4 +1,4 @@
-package tk.imrhj.autologin;
+package tk.imrhj.autologin.util;
 
 import android.util.Log;
 
