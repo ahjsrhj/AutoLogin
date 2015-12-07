@@ -43,7 +43,6 @@ public class WifiChangeService extends Service {
     private String password;
     private String userLength;
     private String userPost;
-    //    private String netPost =   "username=net&password=d0083043c6576dd2&drop=0&type=1&n=110";
     private String netPost =
             "action=login&username=net&password=net" +
                     "&ac_id=4&user_ip=&nas_ip=&user_mac=&save_me=0&ajax=1";
@@ -91,7 +90,12 @@ public class WifiChangeService extends Service {
             if (haveData) {
                 username = preferences.getString(this.getString(R.string.stringUsername), "");
                 password = preferences.getString(this.getString(R.string.stringPassword), "");
-                String string = "action=login&username=" + username + "&password=" + password + "&ac_id=4&user_ip=&nas_ip=&user_mac=&save_me=0&ajax=1";
+                String string
+                        = "action=login&username="
+                        + username
+                        + "&password="
+                        + password
+                        + "&ac_id=4&user_ip=&nas_ip=&user_mac=&save_me=0&ajax=1";
                 userPost = string.toLowerCase();
                 userLength = "" + userPost.length();
             }
@@ -101,7 +105,8 @@ public class WifiChangeService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         System.out.println("我是start");
-        KeyguardManager keyguardManager = (KeyguardManager) this.getSystemService(Context.KEYGUARD_SERVICE);
+        KeyguardManager keyguardManager =
+                (KeyguardManager) this.getSystemService(Context.KEYGUARD_SERVICE);
         if (!keyguardManager.inKeyguardRestrictedInputMode()) {
             LogUtil.d("WifiChangeService", "屏幕状态开启");
             System.out.println("屏幕开启");
@@ -128,17 +133,17 @@ public class WifiChangeService extends Service {
 
         if (wifiConnect && !haveConnect) {
 
-            String SSID = info.getSSID();
-            System.out.println(SSID);
+            String SSID = "";
+            if (info != null) {
+                SSID = info.getSSID();
+            }
 
-            if (SSID.equals("\"WLZX\"") || SSID.equals("\"rhj-miwifi_5G\"")
-                    || SSID.equals("WLZX") || SSID.equals("rhj-miwifi_5G")
-                    || SSID.equals("\"WXXY\"") || SSID.equals("WXXY")) {
+            if (SSID.equals("\"WLZX\"") || SSID.equals("\"rhj-miwifi\"")
+                    || SSID.equals("WLZX") || SSID.equals("rhj-miwifi")) {
                 doLogin(netPost, netLength);
                 haveConnect = true;
-            } else if (showDialog && ((haveData && SSID.equals("\"WXXY\"")) || (haveData && SSID.equals("WXXY")))) {
-
-
+            } else if (showDialog && ((haveData && SSID.equals("\"WXXY\""))
+                    || (haveData && SSID.equals("WXXY")))) {
                 if (!keyguardManager.inKeyguardRestrictedInputMode()) {
                     LogUtil.d("WifiChangeService", "屏幕状态开启");
                     haveConnect = true;
