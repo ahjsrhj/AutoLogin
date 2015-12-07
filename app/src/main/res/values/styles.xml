@@ -1,6 +1,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:background">#4FBDD0</item>   标题栏颜色
+        <item name="android:background">@color/primary</item>   标题栏颜色
     </style>
 
 </resources>

@@ -1,13 +1,11 @@
 package tk.imrhj.autologin.activity;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,11 +17,10 @@ import android.widget.Toast;
 
 import tk.imrhj.autologin.util.HttpContent;
 import tk.imrhj.autologin.R;
-import tk.imrhj.autologin.util.SystemBarTintManager;
 import tk.imrhj.autologin.service.WifiChangeService;
 
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button saveInfo;
     private Button login;
@@ -34,8 +31,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ChangeColor();
         setContentView(R.layout.activity_main);
+        ChangeColor();
         startService(new Intent(this, WifiChangeService.class));
 
 
@@ -60,14 +57,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 String user_name = userName.getText().toString();
                 String pass_word = password.getText().toString();
 
-                if (user_name.equals("") || user_name.length() < 1 || pass_word.equals("") || pass_word.length() < 1) {
+                if (user_name.length() < 1 || pass_word.length() < 1) {
                     Toast.makeText(MainActivity.this, "用户名或密码格式不正确!", Toast.LENGTH_SHORT).show();
                 } else {
                     SharedPreferences.Editor editor = getSharedPreferences(this.getString(R.string.stringFileName), MODE_MULTI_PROCESS).edit();
                     editor.putBoolean(this.getString(R.string.stringHaveData), true);
                     editor.putString(this.getString(R.string.stringUsername), user_name);
                     editor.putString(this.getString(R.string.stringPassword), pass_word);
-                    editor.commit();
+                    editor.apply();
                     Toast.makeText(MainActivity.this, "保存账号信息成功!", Toast.LENGTH_SHORT).show();
                     stopService(service);
                     startService(service);
@@ -87,32 +84,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private void ChangeColor() {
         //系统版本大于5.0
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.parseColor(getString(R.string.bk_color)));
-            getWindow().setNavigationBarColor(Color.parseColor(getString(R.string.bk_color)));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.primary_dark));
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.primary_dark));
+
+            View view = (View) findViewById(R.id.view_status_bar);
+            view.setVisibility(View.GONE);
+
         } else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 
-            View view = (View) findViewById(R.id.view_statusbar);
-            view.setVisibility(View.VISIBLE);
         }
 
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            //透明状态栏
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//            //透明导航栏
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-//            // 创建状态栏的管理实例
-//            SystemBarTintManager tintManager = new SystemBarTintManager(this);
-//            // 激活状态栏设置
-//            tintManager.setStatusBarTintEnabled(true);
-//            // 激活导航栏设置
-//            tintManager.setNavigationBarTintEnabled(true);
-//            // 设置一个颜色给系统栏
-//            tintManager.setTintColor(Color.parseColor(this.getString(R.string.bk_color)));
-//            tintManager.setNavigationBarTintColor(Color.parseColor(this.getString(R.string.bk_color)));
-//        }
     }
 
     //打开应用时读取数据
