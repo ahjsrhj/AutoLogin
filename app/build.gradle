@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "tk.imrhj.autologin"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 7
-        versionName '1.7'
+        versionCode 8
+        versionName '1.8'
     }
     buildTypes {
         release {

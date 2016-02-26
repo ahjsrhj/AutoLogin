@@ -22,6 +22,7 @@ import tk.imrhj.autologin.service.WifiChangeService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "MainActivity";
     private Button saveInfo;
     private Button login;
     private EditText userName;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ChangeColor();
-        startService(new Intent(this, WifiChangeService.class));
+//        startService(new Intent(this, WifiChangeService.class));
 
 
 
@@ -84,11 +85,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void ChangeColor() {
         //系统版本大于5.0
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.primary_dark));
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.primary_dark));
+            Log.e(TAG, "ChangeColor: ");
 
             View view = (View) findViewById(R.id.view_status_bar);
             view.setVisibility(View.GONE);
+
+            getWindow().setStatusBarColor(getResources().getColor(R.color.primary_dark));
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.primary_dark));
+
 
         } else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);

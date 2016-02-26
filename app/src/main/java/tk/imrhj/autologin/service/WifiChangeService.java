@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.util.Base64;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -23,7 +24,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import tk.imrhj.autologin.util.LogUtil;
-import tk.imrhj.autologin.util.MD5;
 import tk.imrhj.autologin.util.MyApplication;
 import tk.imrhj.autologin.R;
 
@@ -43,10 +43,15 @@ public class WifiChangeService extends Service {
     private String password;
     private String userLength;
     private String userPost;
+    private String userPostChinaNet;
     private String netPost =
             "action=login&username=net&password=net" +
                     "&ac_id=4&user_ip=&nas_ip=&user_mac=&save_me=0&ajax=1";
     private String netLength = "90";
+    //皖西学院无线认证ip
+    private String wxxyIp = "211.70.160.3";
+    //ChinaNet无线认证ip
+    private String chinaNetIp = "211.70.160.207:804";
 
 
 
@@ -98,6 +103,11 @@ public class WifiChangeService extends Service {
                         + "&ac_id=4&user_ip=&nas_ip=&user_mac=&save_me=0&ajax=1";
                 userPost = string.toLowerCase();
                 userLength = "" + userPost.length();
+
+                userPostChinaNet = "action=login&username="
+                        + username + "%40chinanet&password={B}"
+                        + Base64.encodeToString(password.getBytes(), Base64.DEFAULT)
+                        + "%3D&ac_id=2&user_ip=&nas_ip=&user_mac=&save_me=0&ajax=1";
             }
         }
 
@@ -140,8 +150,12 @@ public class WifiChangeService extends Service {
 
             if (SSID.equals("\"WLZX\"") || SSID.equals("\"rhj-miwifi\"")
                     || SSID.equals("WLZX") || SSID.equals("rhj-miwifi")) {
-                doLogin(netPost, netLength);
+                doLogin(netPost, netLength, wxxyIp);
                 haveConnect = true;
+            } else if (haveData && SSID.equals("\"WXXY_Chinanet\"")|| (haveData && SSID.equals("WXXY_Chinanet"))) {
+                doLogin(userPostChinaNet, String.valueOf(userPostChinaNet.length()), chinaNetIp);
+                Log.d("sendPost", "onStartCommand: " + SSID);
+
             } else if (showDialog && ((haveData && SSID.equals("\"WXXY\""))
                     || (haveData && SSID.equals("WXXY")))) {
                 if (!keyguardManager.inKeyguardRestrictedInputMode()) {
@@ -153,7 +167,7 @@ public class WifiChangeService extends Service {
                             .setPositiveButton("登陆", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    doLogin(userPost, userLength);
+                                    doLogin(userPost, userLength, wxxyIp);
                                     haveConnect = true;
                                     showDialog = true;
                                 }
@@ -217,14 +231,13 @@ public class WifiChangeService extends Service {
     }
 
 
-
-    public void doLogin(final String post, final String content_length) {
+    public void doLogin(final String post, final String content_length, final String host) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 HttpURLConnection connection = null;
                 try {
-                    URL url = new URL("http://211.70.160.3/include/auth_action.php");
+                    URL url = new URL("http://" + host + "/include/auth_action.php");
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("POST");
                     connection.setConnectTimeout(8000);
@@ -234,9 +247,9 @@ public class WifiChangeService extends Service {
                     connection.setUseCaches(false);
 
                     //设置连接属性
-                    connection.setRequestProperty("Host", "211.70.160.3");
-                    connection.setRequestProperty("Origin", "http://211.70.160.3");
-                    connection.setRequestProperty("Referer", "http://211.70.160.3/srun_portal_pc.php?url=&ac_id=4");
+                    connection.setRequestProperty("Host", host);
+                    connection.setRequestProperty("Origin", "http://" + host);
+                    connection.setRequestProperty("Referer", "http://"+ host + "/srun_portal_pc.php?url=&ac_id=4");
                     connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                     connection.setRequestProperty("Content-Length", content_length);
                     connection.setRequestProperty("Charset", "UTF-8");

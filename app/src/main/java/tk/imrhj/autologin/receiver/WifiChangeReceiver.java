@@ -3,6 +3,7 @@ package tk.imrhj.autologin.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import tk.imrhj.autologin.service.WifiChangeService;
 
@@ -18,7 +19,7 @@ public class WifiChangeReceiver extends BroadcastReceiver {
 
 
         context.startService(service);
-        System.out.println("启动服务");
+        Log.d("onWifiChangeReceiver", "onReceive: 启动服务");
 
     }
 }
