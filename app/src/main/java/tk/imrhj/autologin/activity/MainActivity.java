@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ChangeColor();
-//        startService(new Intent(this, WifiChangeService.class));
-
-
 
         login = (Button) findViewById(R.id.btn_login);
         saveInfo = (Button) findViewById(R.id.btn_start);

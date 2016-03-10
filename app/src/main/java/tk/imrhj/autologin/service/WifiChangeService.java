@@ -203,31 +203,7 @@ public class WifiChangeService extends Service {
     }
 
     public void doLogout() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                HttpURLConnection connection = null;
-                try {
-                    URL url = new URL("http://211.70.160.3/cgi-bin/do_logout?action=logout");
-                    connection = (HttpURLConnection) url.openConnection();
-                    connection.setRequestMethod("GET");
-                    connection.setConnectTimeout(8000);
-                    connection.setReadTimeout(8000);
-                    connection.setDoInput(true);
-                    connection.setDoOutput(true);
-                    connection.setUseCaches(false);
-
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    if (connection != null) {
-                        connection.disconnect();
-                    }
-                }
-
-            }
-        }).start();
+        //// TODO: 16/3/10 添加登出功能
     }
 
 
